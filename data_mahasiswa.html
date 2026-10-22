@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Mahasiswa</title>
+
+    <!-- CSS -->
+    <style>
+        /* Jenis huruf dan warna latar seluruh halaman */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8ff;
+            color: #222;
+            margin: 24px;
+        }
+
+        /* Judul rata tengah berwarna biru */
+        h1 {
+            color: #1a56b0;
+            text-align: center;
+        }
+
+        /* Judul bagian (Form dan Tabel) */
+        h2 {
+            color: #1a56b0;
+            border-bottom: 2px solid #1a56b0;
+            padding-bottom: 4px;
+        }
+
+        /* Class: kotak pembungkus form */
+        .kotak-form {
+            background: white;
+            border: 1px solid #ccd;
+            padding: 16px;
+            max-width: 480px;
+        }
+
+        .kotak-form p {
+            margin: 10px 0;
+        }
+
+        /* Tabel: garis tidak ganda, lebar penuh */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: white;
+        }
+
+        caption {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        /* Sel judul kolom */
+        th {
+            background: #1a56b0;
+            color: white;
+            padding: 8px;
+        }
+
+        /* Sel data */
+        td {
+            border: 1px solid #ccd;
+            padding: 8px;
+        }
+
+        /* Class: IPK 3.50 ke atas ditebalkan dan diberi warna biru */
+        .ipk-tinggi {
+            font-weight: bold;
+            color: #1a56b0;
+        }
+
+        /* Class: baris rata-rata IPK */
+        .rata-rata {
+            background: #e6eefb;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Data Mahasiswa</h1>
+
+    <!-- ===== BAGIAN 1: FORM (6 elemen berbeda) ===== -->
+    <h2>Form Input Mahasiswa</h2>
+
+    <div class="kotak-form">
+        <form action="proses.php" method="post">
+
+            <!-- 1. text: satu baris -->
+            <p>
+                <label for="nama">Nama:</label><br>
+                <input type="text" id="nama" name="nama">
+            </p>
+
+            <!-- 2. email: dicek formatnya oleh browser -->
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email">
+            </p>
+
+            <!-- 3. radio: pilih satu -->
+            <p>
+                Jenis Kelamin:
+                <input type="radio" id="jk-l" name="jk" value="L">
+                <label for="jk-l">Laki-laki</label>
+                <input type="radio" id="jk-p" name="jk" value="P">
+                <label for="jk-p">Perempuan</label>
+            </p>
+
+            <!-- 4. checkbox: boleh pilih lebih dari satu -->
+            <p>
+                Hobi:
+                <input type="checkbox" id="hobi-baca" name="hobi" value="baca">
+                <label for="hobi-baca">Membaca</label>
+                <input type="checkbox" id="hobi-musik" name="hobi" value="musik">
+                <label for="hobi-musik">Musik</label>
+                <input type="checkbox" id="hobi-game" name="hobi" value="game">
+                <label for="hobi-game">Game</label>
+            </p>
+
+            <!-- 5. select: daftar pilihan (dropdown) -->
+            <p>
+                <label for="prodi">Prodi:</label>
+                <select id="prodi" name="prodi">
+                    <option>Teknologi Informasi</option>
+                    <option>Informatika</option>
+                    <option>Sistem Informasi</option>
+                </select>
+            </p>
+
+            <!-- 6. textarea: isian beberapa baris -->
+            <p>
+                <label for="alamat">Alamat:</label><br>
+                <textarea id="alamat" name="alamat" rows="3" cols="40"></textarea>
+            </p>
+
+            <!-- Tombol kirim dan reset -->
+            <p>
+                <button type="submit">Kirim</button>
+                <button type="reset">Reset</button>
+            </p>
+        </form>
+    </div>
+
+    <!-- ===== BAGIAN 2: TABEL 5 MAHASISWA (memakai colspan) ===== -->
+    <h2>Tabel Data Mahasiswa</h2>
+
+    <table>
+        <caption>Daftar Mahasiswa</caption>
+
+        <!-- Baris judul kolom -->
+        <thead>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Prodi</th>
+                <th>IPK</th>
+            </tr>
+        </thead>
+
+        <!-- Isi tabel: 5 data mahasiswa (data contoh) -->
+        <tbody>
+            <tr>
+                <td>252520001</td>
+                <td>Dhian Bismo</td>
+                <td>Teknologi Informasi</td>
+                <td class="ipk-tinggi">3.75</td>
+            </tr>
+            <tr>
+                <td>252520002</td>
+                <td>Brian Sandi</td>
+                <td>Sistem Informasi</td>
+                <td>3.42</td>
+            </tr>
+            <tr>
+                <td>252520003</td>
+                <td>Agita Hanif</td>
+                <td>Informatika</td>
+                <td>3.10</td>
+            </tr>
+            <tr>
+                <td>252520004</td>
+                <td>Dava Sandika</td>
+                <td>Teknologi Informasi</td>
+                <td class="ipk-tinggi">3.88</td>
+            </tr>
+            <tr>
+                <td>252520005</td>
+                <td>Faizin</td>
+                <td>Sistem Informasi</td>
+                <td class="ipk-tinggi">3.55</td>
+            </tr>
+        </tbody>
+
+        <!-- Baris rata-rata: colspan="3" menggabungkan 3 sel ke samping -->
+        <tfoot>
+            <tr class="rata-rata">
+                <td colspan="3">Rata-rata IPK</td>
+                <td>3.54</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

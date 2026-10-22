@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pendaftaran Peserta</title>
+
+    <!-- CSS -->
+    <style>
+        /* Warna latar dan jenis huruf seluruh halaman */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8ff;
+            margin: 24px;
+        }
+
+        /* Judul rata tengah berwarna biru */
+        h1 {
+            color: #1a56b0;
+            text-align: center;
+        }
+
+        /* Jarak antar baris isian form */
+        form p {
+            margin: 10px 0;
+        }
+
+        /* Tombol Kirim berwarna biru */
+        button[type="submit"] {
+            background-color: #1a56b0;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #14438c;
+        }
+
+        /* Tabel: garis tidak ganda, lebar penuh */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        /* Sel judul kolom: latar biru, huruf putih */
+        th {
+            background: #1a56b0;
+            color: white;
+            padding: 6px;
+        }
+
+        /* Sel data: garis tepi dan jarak isi */
+        td {
+            border: 1px solid #ccd;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Judul halaman -->
+    <h1>Pendaftaran Peserta</h1>
+
+    <!-- Form pendaftaran -->
+    <form action="proses.php" method="post">
+
+        <!-- Kolom Nama (text) -->
+        <p>
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama">
+        </p>
+
+        <!-- Jenis Kelamin (radio) -->
+        <p>
+            Jenis Kelamin:
+            <input type="radio" id="jk-l" name="jk" value="L">
+            <label for="jk-l">Laki-laki</label>
+            <input type="radio" id="jk-p" name="jk" value="P">
+            <label for="jk-p">Perempuan</label>
+        </p>
+
+        <!-- Jurusan (select / dropdown) -->
+        <p>
+            <label for="jurusan">Jurusan:</label>
+            <select id="jurusan" name="jurusan">
+                <option>Informatika</option>
+                <option>Sistem Informasi</option>
+                <option>Teknologi Informasi</option>
+            </select>
+        </p>
+
+        <!-- Tombol Kirim -->
+        <p>
+            <button type="submit">Kirim</button>
+        </p>
+    </form>
+
+    <!-- Tabel peserta -->
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jurusan</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Budi</td>
+            <td>Informatika</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Sari</td>
+            <td>Sistem Informasi</td>
+        </tr>
+    </table>
+
+</body>
+</html>
